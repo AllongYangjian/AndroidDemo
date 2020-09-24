@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yj.app">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".TemplateActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+        <activity
+            android:name=".view.animator.AnimatorActivity"
+            android:label="@string/animator_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.LayoutActivity"
+            android:label="@string/layout_component"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.PictureInPictureActivity"
+            android:configChanges="screenLayout|screenSize|smallestScreenSize|orientation"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            tools:targetApi="n" />
+        <activity
+            android:name=".view.layoutcomponent.DragActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.layoutcomponent.CopyAndPasteActivity"
+            android:label="@string/copy_and_paste"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.LayoutActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.SearchDialogActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".view.SearchableActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.SearchViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.layoutcomponent.SearchableActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".view.layoutcomponent.SettingActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.MenuIntentActivity"
+            android:label="@string/menu_intent">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.PopupMenuActivity"
+            android:label="@string/popup_menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.ContextModeActivity"
+            android:label="@string/context_mode">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.ContextMenuActivity"
+            android:label="@string/context_menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.DialogActivity"
+            android:theme="@style/DialogWhenLarge">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.LayoutActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.MenuActivity"
+            android:label="@string/menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.LayoutActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.ToastActivity"
+            android:label="@string/toast"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.LayoutActivity" />
+        </activity>
+        <activity
+            android:name=".view.layoutcomponent.ScrollRefreshActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- 指定父Activity,使得actionbar点击返回按钮可以返回 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.layoutcomponent.LayoutActivity" />
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.animator.BasicUseActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/basic_use">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity"/>
+        </activity>
+
+        <provider
+            android:name=".provider.MySuggestionProvider"
+            android:authorities="com.yj.app.provider.MySuggestionProvider" />
+        <provider
+            android:name=".provider.CustomSuggestionProvider"
+            android:authorities="com.yj.app.provider.CustomSuggestionProvider" />
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+rootProject.name='AndroidComponent'
+include ':intent'
+include ':layout'
+include ':actionbar'
+include ':bubble'
+include ':app'

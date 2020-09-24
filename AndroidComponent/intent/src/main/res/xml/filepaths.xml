@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    该路径一定要和FileProvider中的路径匹配-->
+    <!--    Android/data/com.yj.intent/files/-->
+<!--    不同的设备会存在路径找不到问题，还是写成绝对路径-->
+    <external-path
+        name="temps"
+        path="Android/data/com.yj.intent/files/Pictures/temp" />
+    <external-path
+        name="temp"
+        path="Android/data/com.yj.intent/files/DCIM/video" />
+</paths>

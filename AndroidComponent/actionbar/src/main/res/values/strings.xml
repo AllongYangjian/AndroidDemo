@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ActionBar</string>
+    <string name="action_camere">相机</string>
+    <string name="action_camera">相机</string>
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="action_share">分享</string>
+</resources>

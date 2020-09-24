@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference
+        android:key="message"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:title="@string/message"
+        app:fragment="com.yj.app.view.fragment.MessageFragment"/>
+
+    <Preference
+        android:key="sync"
+        android:icon="@android:drawable/ic_secure"
+        android:title="@string/sync"
+        app:fragment="com.yj.app.view.fragment.SyncFragment"/>
+    <Preference
+        android:key="intent"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/intent">
+        <intent
+            android:targetPackage="com.yj.app"
+            android:targetClass="com.yj.app.view.ToastActivity"/>
+    </Preference>
+    <Preference
+        android:key="web"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/intent">
+        <intent
+           android:action="android.intent.action.VIEW"
+            android:data="https://www.baidu.com"/>
+    </Preference>
+
+</PreferenceScreen>

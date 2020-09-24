@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_n1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="普通通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_n2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="重要通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n1" />
+
+        <Button
+            android:id="@+id/btn_n3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="紧急通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n2" />
+
+
+        <Button
+            android:id="@+id/btn_n4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="通知按钮"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n3" />
+
+        <Button
+            android:id="@+id/btn_n5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="直接回复通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n4" />
+
+        <Button
+            android:id="@+id/btn_n6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="进度通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n5" />
+
+        <Button
+            android:id="@+id/btn_n7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="展开式通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n6" />
+        <Button
+        android:id="@+id/btn_n8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="大文本通知"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_n7" />
+        <Button
+            android:id="@+id/btn_n9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="收件箱样式通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n8" />
+        <Button
+            android:id="@+id/btn_n10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="对话框样式通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n9" />
+        <Button
+            android:id="@+id/btn_n11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="自定义通知"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_n10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

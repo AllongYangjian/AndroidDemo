@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+       android:key="mq"
+        android:title="MQ"
+        android:summary="mq config info">
+        <EditTextPreference
+            android:key="ip"
+            android:title="IP"
+            android:summary="ip address"/>
+        <EditTextPreference
+            android:key="port"
+            android:title="PORT"
+            android:summary="please input port"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="alarm_config">
+        <CheckBoxPreference
+            android:key="enable_alarm"
+            android:title="alarm"/>
+        <ListPreference
+            android:key="alarm_type"
+            android:title="Alarm Type"
+            android:summary="click select alarm type"
+            android:defaultValue="true"
+            android:entries="@array/alarm"
+            android:entryValues="@array/alarm"/>
+    </PreferenceCategory>
+</PreferenceScreen>

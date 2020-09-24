@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/help" />
+    <group
+        android:id="@+id/operation"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="@string/search"/>
+        <item
+            android:id="@+id/add"
+            android:title="@string/add"
+            android:icon="@android:drawable/ic_menu_add"/>
+    </group>
+
+
+</menu>

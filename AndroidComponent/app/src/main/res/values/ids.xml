@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="intent_group"/>
+    <item type="id" name="menu_add"/>
+    <item name="intent_call_phone" type="id"/>
+    <item name="menu_call_phone" type="id"/>
+</resources>

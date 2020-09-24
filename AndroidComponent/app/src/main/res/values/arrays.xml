@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="component_list">
+        <item>界面相关</item>
+        <item>动画和过渡相关</item>
+    </string-array>
+    <string-array name="function_list">
+        <item>滑动刷新</item>
+        <item>吐司/SnackBar</item>
+        <item>对话框</item>
+        <item>菜单</item>
+        <item>设置项</item>
+        <item>搜索微键界面</item>
+        <item>搜索对话框界面</item>
+        <item>复制和粘贴</item>
+        <item>拖放</item>
+        <item>画中画模式</item>
+    </string-array>
+
+    <string-array name="animator_list">
+        <item>属性动画的简单使用</item>
+    </string-array>
+
+    <string-array name="item_test_list_data">
+        <item>测试数据1</item>
+        <item>测试数据2</item>
+        <item>测试数据3</item>
+        <item>测试数据4</item>
+        <item>测试数据5</item>
+    </string-array>
+    <string-array name="item_sex">
+        <item>男</item>
+        <item>女</item>
+        <item>未知</item>
+    </string-array>
+    <string-array name="hobbit">
+        <item>苹果</item>
+        <item>香蕉</item>
+        <item>梨</item>
+    </string-array>
+
+    <string-array name="alarm">
+        <item>普通报警</item>
+        <item>通知报警</item>
+        <item>铃声报警</item>
+    </string-array>
+</resources>
