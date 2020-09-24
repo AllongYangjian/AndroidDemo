@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">自定义View集合</string>
+    <string name="text_desc_custom_view">界面相关</string>
+    <string name="text_desc_net_and_media">媒体网络</string>
+    <string name="text_desc_system_and_hardware"><![CDATA[系统&硬件]]></string>
+    <string name="text_desc_comprehensive">综合项目</string>
+    <string name="text_desc_hh">呵呵</string>
+    <string name="text_tag_single">当行标签</string>
+    <string name="text_tag_mulip">多行标签</string>
+    <string name="tag">标签</string>
+
+</resources>

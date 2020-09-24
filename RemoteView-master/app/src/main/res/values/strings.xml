@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RemoteView</string>
+    <string name="send_notification">发送通知</string>
+</resources>

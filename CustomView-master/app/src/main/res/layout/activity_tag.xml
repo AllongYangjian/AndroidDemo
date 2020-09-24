@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.example.yj.customview.activity.tag.TagActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/text_tag_single"
+            android:textColor="@color/black"
+            android:textSize="24.0sp"/>
+
+        <org.example.yj.customview.widget.customview.tagview.TagView
+            android:id="@+id/tagview_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tgShowEndText="true"
+            app:tgShowRightImg="true"
+            app:tgSingleLine="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/text_tag_mulip"
+            android:textColor="@color/black"
+            android:textSize="24.0sp"/>
+
+        <org.example.yj.customview.widget.customview.tagview.TagView
+            android:id="@+id/tagview_multi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tgShowEndText="false"
+            app:tgShowRightImg="false"
+            app:tgItemBorderVertical="8dp"
+            app:tgSingleLine="false"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

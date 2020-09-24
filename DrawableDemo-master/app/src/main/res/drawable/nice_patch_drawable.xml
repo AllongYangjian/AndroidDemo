@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nine-patch xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_drawable1"
+    android:dither="true">
+    <!--<nine-patch> requires a valid 9-patch source image-->
+
+
+</nine-patch>

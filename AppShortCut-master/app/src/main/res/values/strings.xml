@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShortCut</string>
+    <string name="exist_shorts">存在的快捷方式</string>
+    <string name="add_shortcut">添加</string>
+    <string name="add_shortcut_long">添加快捷方式</string>
+    <string name="remove_shortcut">移除</string>
+    <string name="disable_shortcut">Disable</string>
+    <string name="enable_shortcut">Enable</string>
+    <string name="add_new_website">添加新站点</string>
+</resources>

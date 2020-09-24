@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="customview_item_title">
+        <item>文字墙(TextWall)</item>
+        <item>TAG标签</item>
+        <item>TAG标签(×)</item>
+        <item>PictureTagView</item>
+    </string-array>
+
+    <string-array name="colors">
+        <item>#ffffff</item><!--白色-->
+        <item>#000000</item><!--黑色-->
+        <item>#FFFF00</item><!--黄色 -->
+        <item>#FFA500</item><!--橙色 -->
+        <item>#FF0000</item><!--红色 -->
+        <item>#800080</item><!--紫色 -->
+        <item>#00FFFF</item><!--青色 -->
+        <item>#0000FF</item><!--蓝色 -->
+        <item>#008000</item><!--绿色 -->
+    </string-array>
+</resources>

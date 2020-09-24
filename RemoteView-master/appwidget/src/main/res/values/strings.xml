@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppWidget</string>
+    <string name="appwidget_text">APP_WIDGET</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/add"
+        android:shortcutId="add_website"
+        android:shortcutLongLabel="@string/add_shortcut_long"
+        android:shortcutShortLabel="@string/add_shortcut">
+        <intent
+            android:action="com.example.shortcut.ADD_ACTION"
+            android:targetClass="com.example.shortcut.MainActivity"
+            android:targetPackage="com.example.shortcut" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
