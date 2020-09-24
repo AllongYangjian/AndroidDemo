@@ -18,7 +18,6 @@ import com.yj.app.view.layoutcomponent.PictureInPictureActivity;
 import com.yj.app.view.layoutcomponent.SearchDialogActivity;
 import com.yj.app.view.layoutcomponent.SearchViewActivity;
 import com.yj.app.view.layoutcomponent.SettingActivity;
-import com.yj.app.view.layoutcomponent.ToastActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;

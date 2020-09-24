@@ -54,7 +54,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(BasicUseActivity.class);
                 break;
             case 1:
-                doGotoActivity(ToastActivity.class);
+                doGotoActivity(DrawableAnimatorActivity.class);
                 break;
             case 2:
                 doGotoActivity(DialogActivity.class);

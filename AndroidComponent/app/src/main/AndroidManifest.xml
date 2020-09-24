@@ -148,6 +148,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity"/>
         </activity>
+        <activity android:name=".view.animator.DrawableAnimatorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity"/>
+        </activity>
 
         <provider
             android:name=".provider.MySuggestionProvider"
