@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TemplateActivity"
+        <activity
+            android:name=".TemplateActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -141,18 +142,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.animator.BasicUseActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/basic_use">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
-        </activity>
-        <activity android:name=".view.animator.DrawableAnimatorActivity"
+        <activity
+            android:name=".view.animator.BasicUseActivity"
+            android:label="@string/basic_use"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+        <activity
+            android:name=".view.animator.DrawableAnimatorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+        <activity
+            android:name=".view.animator.ShowHideActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+        <activity
+            android:name=".view.animator.CardFlipActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
 
         <provider

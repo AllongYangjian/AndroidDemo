@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.yj.app.R;
 import com.yj.app.databinding.ActivityAnimatorBinding;
+import com.yj.app.databinding.ActivityCardFlipBinding;
 import com.yj.app.databinding.ActivityLayoutBinding;
 import com.yj.app.view.layoutcomponent.CopyAndPasteActivity;
 import com.yj.app.view.layoutcomponent.DialogActivity;
@@ -57,10 +58,10 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(DrawableAnimatorActivity.class);
                 break;
             case 2:
-                doGotoActivity(DialogActivity.class);
+                doGotoActivity(ShowHideActivity.class);
                 break;
             case 3:
-                doGotoActivity(MenuActivity.class);
+                doGotoActivity(CardFlipActivity.class);
                 break;
             case 4:
                 doGotoActivity(SettingActivity.class);

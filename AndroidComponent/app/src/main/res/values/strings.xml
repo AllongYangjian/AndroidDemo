@@ -41,4 +41,7 @@
     <string name="width">宽度</string>
     <string name="together">混合</string>
     <string name="xml">xml属性文件动画</string>
+    <string name="card_back_title">正面标题</string>
+    <string name="card_back_description">正面内容</string>
+    <string name="reverse">翻转</string>
 </resources>
