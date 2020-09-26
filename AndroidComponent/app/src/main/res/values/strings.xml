@@ -44,4 +44,6 @@
     <string name="card_back_title">正面标题</string>
     <string name="card_back_description">正面内容</string>
     <string name="reverse">翻转</string>
+    <string name="show">显示</string>
+    <string name="hide">隐藏</string>
 </resources>

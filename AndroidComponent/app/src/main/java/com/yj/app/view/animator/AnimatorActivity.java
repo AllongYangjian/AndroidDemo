@@ -64,7 +64,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(CardFlipActivity.class);
                 break;
             case 4:
-                doGotoActivity(SettingActivity.class);
+                doGotoActivity(CircularRevealActivity.class);
                 break;
             case 5:
                 doGotoActivity(SearchViewActivity.class);
