@@ -67,7 +67,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(CircularRevealActivity.class);
                 break;
             case 5:
-                doGotoActivity(SearchViewActivity.class);
+                doGotoActivity(CurvePathActivity.class);
                 break;
             case 6:
                 doGotoActivity(SearchDialogActivity.class);
