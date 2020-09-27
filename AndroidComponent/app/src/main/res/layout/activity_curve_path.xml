@@ -34,12 +34,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_curve_path" />
+        <Button
+            android:id="@+id/btn_curve_path3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/curve_path3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_curve_path2" />
         <TextView
             android:id="@+id/iv_circle"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/circle_path"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_curve_path2" />
+            app:layout_constraintTop_toBottomOf="@id/btn_curve_path3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
