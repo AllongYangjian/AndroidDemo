@@ -70,7 +70,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(CurvePathActivity.class);
                 break;
             case 6:
-                doGotoActivity(SearchDialogActivity.class);
+                doGotoActivity(ScaleAnimationActivity.class);
                 break;
             case 7:
                 doGotoActivity(CopyAndPasteActivity.class);

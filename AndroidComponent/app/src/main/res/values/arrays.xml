@@ -24,6 +24,7 @@
         <item>卡片翻转动画</item>
         <item>圆形揭露动画</item>
         <item>曲线运动</item>
+        <item>缩放动画</item>
     </string-array>
 
     <string-array name="item_test_list_data">
