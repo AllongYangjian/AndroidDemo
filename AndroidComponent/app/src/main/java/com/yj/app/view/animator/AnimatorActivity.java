@@ -73,7 +73,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(ScaleAnimationActivity.class);
                 break;
             case 7:
-                doGotoActivity(CopyAndPasteActivity.class);
+                doGotoActivity(SpringActivity.class);
                 break;
             case 8:
                 doGotoActivity(DragActivity.class);
