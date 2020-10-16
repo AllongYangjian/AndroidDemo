@@ -50,4 +50,5 @@
     <string name="curve_path3">Fling动画</string>
     <string name="scale_animation">缩放动画</string>
     <string name="spring_animate">弹簧动画</string>
+    <string name="view_update">界面更新动画</string>
 </resources>

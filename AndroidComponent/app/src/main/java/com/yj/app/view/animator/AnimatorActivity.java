@@ -76,7 +76,7 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(SpringActivity.class);
                 break;
             case 8:
-                doGotoActivity(DragActivity.class);
+                doGotoActivity(ViewUpdateActivity.class);
                 break;
             case 9:
                 doGotoActivity(PictureInPictureActivity.class);
