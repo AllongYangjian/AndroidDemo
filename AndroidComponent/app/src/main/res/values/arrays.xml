@@ -27,6 +27,8 @@
         <item>缩放动画</item>
         <item>弹簧动画</item>
         <item>界面更新动画</item>
+        <item>ViewPage动画</item>
+        <item>ViewPage2动画</item>
     </string-array>
 
     <string-array name="item_test_list_data">

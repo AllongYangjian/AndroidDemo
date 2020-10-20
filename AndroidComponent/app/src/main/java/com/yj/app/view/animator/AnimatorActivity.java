@@ -27,7 +27,6 @@ import java.util.Objects;
 /**
  * 动画相关组件和属性
  * 1、
- *
  */
 public class AnimatorActivity extends AppCompatActivity {
 
@@ -79,7 +78,10 @@ public class AnimatorActivity extends AppCompatActivity {
                 doGotoActivity(ViewUpdateActivity.class);
                 break;
             case 9:
-                doGotoActivity(PictureInPictureActivity.class);
+                doGotoActivity(ViewPageAnimationActivity.class);
+                break;
+            case 10:
+                doGotoActivity(ViewPage2AnimationActivity.class);
                 break;
         }
     }

@@ -171,38 +171,61 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity" />
         </activity>
-        <activity android:name=".view.animator.CircularRevealActivity"
+        <activity
+            android:name=".view.animator.CircularRevealActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
-        <activity android:name=".view.animator.CurvePathActivity"
+        <activity
+            android:name=".view.animator.CurvePathActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
-        <activity android:name=".view.animator.ScaleAnimationActivity"
+        <activity
+            android:name=".view.animator.ScaleAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
 
-        <activity android:name=".view.animator.SpringActivity"
+        <activity
+            android:name=".view.animator.SpringActivity"
             android:label="@string/spring_animate"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
-        <activity android:name=".view.animator.ViewUpdateActivity"
+        <activity
+            android:name=".view.animator.ViewUpdateActivity"
             android:label="@string/view_update"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.animator.AnimatorActivity"/>
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+
+        <activity
+            android:name=".view.animator.ViewPageAnimationActivity"
+            android:label="@string/view_page"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
+        </activity>
+
+        <activity
+            android:name=".view.animator.ViewPage2AnimationActivity"
+            android:label="@string/view_page2"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.animator.AnimatorActivity" />
         </activity>
 
         <provider

@@ -51,4 +51,6 @@
     <string name="scale_animation">缩放动画</string>
     <string name="spring_animate">弹簧动画</string>
     <string name="view_update">界面更新动画</string>
+    <string name="view_page">ViewPage切换动画】</string>
+    <string name="view_page2">ViewPage2切换</string>
 </resources>
