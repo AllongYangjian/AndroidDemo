@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/bubble" />
             <option value="$PROJECT_DIR$/intent" />
             <option value="$PROJECT_DIR$/layout" />
+            <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

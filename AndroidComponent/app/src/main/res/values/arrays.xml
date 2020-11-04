@@ -3,6 +3,7 @@
     <string-array name="component_list">
         <item>界面相关</item>
         <item>动画和过渡相关</item>
+        <item>图形和图画</item>
     </string-array>
     <string-array name="function_list">
         <item>滑动刷新</item>
@@ -29,6 +30,10 @@
         <item>界面更新动画</item>
         <item>ViewPage动画</item>
         <item>ViewPage2动画</item>
+    </string-array>
+
+    <string-array name="image_list">
+
     </string-array>
 
     <string-array name="item_test_list_data">
