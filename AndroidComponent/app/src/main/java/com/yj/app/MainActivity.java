@@ -18,6 +18,7 @@ import com.yj.app.view.layoutcomponent.PictureInPictureActivity;
 import com.yj.app.view.layoutcomponent.SearchDialogActivity;
 import com.yj.app.view.layoutcomponent.SearchViewActivity;
 import com.yj.app.view.layoutcomponent.SettingActivity;
+import com.yj.app.view.media.MediaActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -46,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 doGotoActivity(AnimatorActivity.class);
                 break;
             case 2:
-                doGotoActivity(DialogActivity.class);
+//                doGotoActivity(DialogActivity.class);
                 break;
             case 3:
-                doGotoActivity(MenuActivity.class);
+                doGotoActivity(MediaActivity.class);
                 break;
             case 4:
                 doGotoActivity(SettingActivity.class);

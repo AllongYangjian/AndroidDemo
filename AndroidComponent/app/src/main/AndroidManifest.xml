@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.yj.app">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -192,7 +198,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity" />
         </activity>
-
         <activity
             android:name=".view.animator.SpringActivity"
             android:label="@string/spring_animate"
@@ -209,7 +214,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity" />
         </activity>
-
         <activity
             android:name=".view.animator.ViewPageAnimationActivity"
             android:label="@string/view_page"
@@ -218,7 +222,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity" />
         </activity>
-
         <activity
             android:name=".view.animator.ViewPage2AnimationActivity"
             android:label="@string/view_page2"
@@ -226,6 +229,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.animator.AnimatorActivity" />
+        </activity>
+        <activity
+            android:name=".view.media.MediaActivity"
+            android:label="@string/media"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".view.media.VideoRecordActivity"
+            android:label="@string/video_record"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.media.MediaActivity" />
         </activity>
 
         <provider

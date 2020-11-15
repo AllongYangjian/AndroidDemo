@@ -4,6 +4,7 @@
         <item>界面相关</item>
         <item>动画和过渡相关</item>
         <item>图形和图画</item>
+        <item>音视频</item>
     </string-array>
     <string-array name="function_list">
         <item>滑动刷新</item>
@@ -36,6 +37,10 @@
 
     </string-array>
 
+    <string-array name="media_list">
+        <item>视频录制</item>
+    </string-array>
+
     <string-array name="item_test_list_data">
         <item>测试数据1</item>
         <item>测试数据2</item>
@@ -59,4 +64,5 @@
         <item>通知报警</item>
         <item>铃声报警</item>
     </string-array>
+
 </resources>

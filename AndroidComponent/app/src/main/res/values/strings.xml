@@ -54,4 +54,11 @@
     <string name="view_page">ViewPage切换动画】</string>
     <string name="view_page2">ViewPage2切换</string>
     <string name="lorem_ipsum">嘿嘿</string>
+    <string name="media">多媒体相关</string>
+    <string name="video_record">视频录制</string>
+    <string name="record">录制</string>
+    <string name="stop">Stop</string>
+    <string name="description_info">Info</string>
+    <string name="permission_request">This sample needs permission for camera and audio recording.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 </resources>
