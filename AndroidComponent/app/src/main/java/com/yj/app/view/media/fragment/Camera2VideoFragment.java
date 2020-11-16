@@ -82,6 +82,12 @@ public class Camera2VideoFragment extends Fragment
 
     private FragmentCamera2VideoBinding binding;
 
+    private static final int SENSOR_ORIENTATION_DEFAULT_DEGREES = 90;
+    private static final int SENSOR_ORIENTATION_INVERSE_DEGREES = 270;
+
+    private static final SparseIntArray DEFAULT_ORIENTATIONS = new SparseIntArray();
+    private static final SparseIntArray INVERSE_ORIENTATIONS = new SparseIntArray();
+
     private static final int REQUEST_VIDEO_PERMISSIONS = 1;
     private static final String FRAGMENT_DIALOG = "dialog";
 
@@ -443,7 +449,7 @@ public class Camera2VideoFragment extends Fragment
      */
     private boolean hasPermissionsGranted(String[] permissions) {
         for (String permission : permissions) {
-            if (ActivityCompat.checkSelfPermission(getActivity(), permission)
+            if (ActivityCompat.checkSelfPermission(requireActivity(), permission)
                     != PackageManager.PERMISSION_GRANTED) {
                 return false;
             }
@@ -520,35 +526,91 @@ public class Camera2VideoFragment extends Fragment
         }
         try {
             closePreviewSession();
+            setUpMediaRecorder();
             SurfaceTexture texture = binding.texture.getSurfaceTexture();
             assert texture != null;
             texture.setDefaultBufferSize(mPreviewSize.getWidth(), mPreviewSize.getHeight());
-            mPreviewBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+            mPreviewBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_RECORD);
+            List<Surface> surfaces = new ArrayList<>();
 
+            // Set up Surface for the camera preview
             Surface previewSurface = new Surface(texture);
+            surfaces.add(previewSurface);
             mPreviewBuilder.addTarget(previewSurface);
 
-            mCameraDevice.createCaptureSession(Collections.singletonList(previewSurface),
-                    new CameraCaptureSession.StateCallback() {
+            // Set up Surface for the MediaRecorder
+            Surface recorderSurface = mMediaRecorder.getSurface();
+            surfaces.add(recorderSurface);
+            mPreviewBuilder.addTarget(recorderSurface);
 
-                        @Override
-                        public void onConfigured(@NonNull CameraCaptureSession session) {
-                            mPreviewSession = session;
-                            updatePreview();
-                        }
 
+            // Start a capture session
+            // Once the session starts, we can update the UI and start recording
+            mCameraDevice.createCaptureSession(surfaces, new CameraCaptureSession.StateCallback() {
+
+                @Override
+                public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
+                    mPreviewSession = cameraCaptureSession;
+                    updatePreview();
+                    requireActivity().runOnUiThread(new Runnable() {
                         @Override
-                        public void onConfigureFailed(@NonNull CameraCaptureSession session) {
-                            Activity activity = getActivity();
-                            if (null != activity) {
-                                Toast.makeText(activity, "Failed", Toast.LENGTH_SHORT).show();
-                            }
+                        public void run() {
+                            // UI
+                            binding.video.setText(R.string.stop);
+                            mIsRecordingVideo = true;
+
+                            // Start recording
+                            mMediaRecorder.start();
                         }
-                    }, mBackgroundHandler);
-        } catch (CameraAccessException e) {
+                    });
+                }
+
+                @Override
+                public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
+                    Activity activity = getActivity();
+                    if (null != activity) {
+                        Toast.makeText(activity, "Failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }, mBackgroundHandler);
+        } catch (CameraAccessException | IOException e) {
             e.printStackTrace();
         }
+    }
 
+    private void setUpMediaRecorder() throws IOException {
+        final Activity activity = getActivity();
+        if (null == activity) {
+            return;
+        }
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        if (mNextVideoAbsolutePath == null || mNextVideoAbsolutePath.isEmpty()) {
+            mNextVideoAbsolutePath = getVideoFilePath(getActivity());
+        }
+        mMediaRecorder.setOutputFile(mNextVideoAbsolutePath);
+        mMediaRecorder.setVideoEncodingBitRate(10000000);
+        mMediaRecorder.setVideoFrameRate(30);
+        mMediaRecorder.setVideoSize(mVideoSize.getWidth(), mVideoSize.getHeight());
+        mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+        switch (mSensorOrientation) {
+            case SENSOR_ORIENTATION_DEFAULT_DEGREES:
+                mMediaRecorder.setOrientationHint(DEFAULT_ORIENTATIONS.get(rotation));
+                break;
+            case SENSOR_ORIENTATION_INVERSE_DEGREES:
+                mMediaRecorder.setOrientationHint(INVERSE_ORIENTATIONS.get(rotation));
+                break;
+        }
+        mMediaRecorder.prepare();
+    }
+
+    private String getVideoFilePath(Context context) {
+        final File dir = context.getExternalFilesDir(null);
+        return (dir == null ? "" : (dir.getAbsolutePath() + "/"))
+                + System.currentTimeMillis() + ".mp4";
     }
 
     private void closePreviewSession() {
@@ -580,7 +642,62 @@ public class Camera2VideoFragment extends Fragment
     }
 
     private void stopRecordingVideo() {
+        // UI
+        mIsRecordingVideo = false;
+        binding.video.setText(R.string.record);
+        // Stop recording
+        mMediaRecorder.stop();
+        mMediaRecorder.reset();
 
+        Activity activity = getActivity();
+        if (null != activity) {
+            Toast.makeText(activity, "Video saved: " + mNextVideoAbsolutePath,
+                    Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Video saved: " + mNextVideoAbsolutePath);
+        }
+        mNextVideoAbsolutePath = null;
+        startPreview();
+    }
+
+    @Override
+    public void onPause() {
+        closeCamera();
+        stopBackgroundThread();
+        super.onPause();
+    }
+
+
+    private void closeCamera() {
+        try {
+            mCameraOpenCloseLock.acquire();
+            closePreviewSession();
+            if (null != mCameraDevice) {
+                mCameraDevice.close();
+                mCameraDevice = null;
+            }
+            if (null != mMediaRecorder) {
+                mMediaRecorder.release();
+                mMediaRecorder = null;
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Interrupted while trying to lock camera closing.");
+        } finally {
+            mCameraOpenCloseLock.release();
+        }
+    }
+
+    /**
+     * Stops the background thread and its {@link Handler}.
+     */
+    private void stopBackgroundThread() {
+        mBackgroundThread.quitSafely();
+        try {
+            mBackgroundThread.join();
+            mBackgroundThread = null;
+            mBackgroundHandler = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static class ConfirmationDialog extends DialogFragment {
