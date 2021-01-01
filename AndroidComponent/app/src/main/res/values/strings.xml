@@ -61,4 +61,7 @@
     <string name="description_info">Info</string>
     <string name="permission_request">This sample needs permission for camera and audio recording.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="aidl">AIDL服务</string>
+    <string name="file_path">文件路径</string>
+    <string name="file_storage_path">文件存储路径</string>
 </resources>

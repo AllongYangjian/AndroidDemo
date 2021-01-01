@@ -5,6 +5,7 @@
         <item>动画和过渡相关</item>
         <item>图形和图画</item>
         <item>音视频</item>
+        <item>应用数据和文件</item>
     </string-array>
     <string-array name="function_list">
         <item>滑动刷新</item>
@@ -31,6 +32,10 @@
         <item>界面更新动画</item>
         <item>ViewPage动画</item>
         <item>ViewPage2动画</item>
+    </string-array>
+
+    <string-array name="file_list">
+        <item>各种存储路径</item>
     </string-array>
 
     <string-array name="image_list">
