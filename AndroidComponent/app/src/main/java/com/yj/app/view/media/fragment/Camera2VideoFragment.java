@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
@@ -36,6 +37,8 @@ import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.params.StreamConfigurationMap;
+import android.media.Image;
+import android.media.ImageReader;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
@@ -74,6 +77,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Camera2VideoFragment extends Fragment
         implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -147,6 +151,8 @@ public class Camera2VideoFragment extends Fragment
      * MediaRecorder
      */
     private MediaRecorder mMediaRecorder;
+
+    private ImageReader mImageReader;
 
 
     public static Camera2VideoFragment newInstance() {
@@ -418,6 +424,10 @@ public class Camera2VideoFragment extends Fragment
             Surface previewSurface = new Surface(texture);
             mPreviewBuilder.addTarget(previewSurface);
 
+            //添加预览数据操作
+            mImageReader = ImageReader.newInstance(mPreviewSize.getWidth(),mPreviewSize.getHeight(), ImageFormat.YUV_420_888, 2);
+            mImageReader.setOnImageAvailableListener(
+                    new OnImageAvailableListenerImpl(), mBackgroundHandler);
             mCameraDevice.createCaptureSession(Collections.singletonList(previewSurface),
                     new CameraCaptureSession.StateCallback() {
 
@@ -437,6 +447,38 @@ public class Camera2VideoFragment extends Fragment
                     }, mBackgroundHandler);
         } catch (CameraAccessException e) {
             e.printStackTrace();
+        }
+    }
+
+    private class OnImageAvailableListenerImpl implements ImageReader.OnImageAvailableListener {
+        private byte[] y;
+        private byte[] u;
+        private byte[] v;
+        private ReentrantLock lock = new ReentrantLock();
+
+        @Override
+        public void onImageAvailable(ImageReader reader) {
+            Image image = reader.acquireNextImage();
+            // Y:U:V == 4:2:2
+            if ( image.getFormat() == ImageFormat.YUV_420_888) {
+                Image.Plane[] planes = image.getPlanes();
+                // 加锁确保y、u、v来源于同一个Image
+                lock.lock();
+                // 重复使用同一批byte数组，减少gc频率
+                if (y == null) {
+                    y = new byte[planes[0].getBuffer().limit() - planes[0].getBuffer().position()];
+                    u = new byte[planes[1].getBuffer().limit() - planes[1].getBuffer().position()];
+                    v = new byte[planes[2].getBuffer().limit() - planes[2].getBuffer().position()];
+                }
+                if (image.getPlanes()[0].getBuffer().remaining() == y.length) {
+                    planes[0].getBuffer().get(y);
+                    planes[1].getBuffer().get(u);
+                    planes[2].getBuffer().get(v);
+//                    camera2Listener.onPreview(y, u, v, mPreviewSize, planes[0].getRowStride());
+                }
+                lock.unlock();
+            }
+            image.close();
         }
     }
 
