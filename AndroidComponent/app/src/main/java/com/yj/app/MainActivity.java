@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 
 import com.yj.app.databinding.ActivityMainBinding;
 import com.yj.app.view.animator.AnimatorActivity;
+import com.yj.app.view.file.FilePathActivity;
 import com.yj.app.view.layoutcomponent.CopyAndPasteActivity;
 import com.yj.app.view.layoutcomponent.DialogActivity;
 import com.yj.app.view.layoutcomponent.DragActivity;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 doGotoActivity(MediaActivity.class);
                 break;
             case 4:
-                doGotoActivity(SettingActivity.class);
+                doGotoActivity(FilePathActivity.class);
                 break;
             case 5:
                 doGotoActivity(SearchViewActivity.class);

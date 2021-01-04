@@ -17,6 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".view.service.ServiceActivity"
+            android:label="@string/aidl">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".TemplateActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -247,12 +254,38 @@
                 android:value=".view.media.MediaActivity" />
         </activity>
 
+        <activity android:name=".view.file.FilePathActivity"
+            android:label="@string/file_path"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".view.file.FileStoragePathActivity"
+            android:label="@string/file_storage_path"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.file.FilePathActivity"/>
+        </activity>
+
         <provider
             android:name=".provider.MySuggestionProvider"
             android:authorities="com.yj.app.provider.MySuggestionProvider" />
         <provider
             android:name=".provider.CustomSuggestionProvider"
             android:authorities="com.yj.app.provider.CustomSuggestionProvider" />
+
+        <service
+            android:name=".view.service.RemoteService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":remote" />
+        <service android:name=".view.service.ServiceActivity$MyJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>
