@@ -3,7 +3,6 @@ package com.yj.app;
 import android.content.Context;
 
 import androidx.test.InstrumentationRegistry;
-import androidx.test.runner.AndroidJUnit4;
 
 import com.yj.app.db.MyRoomDatabase;
 import com.yj.app.domain.User;
@@ -11,8 +10,11 @@ import com.yj.app.domain.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
-@RunWith(AndroidJUnit4.class)
+@RunWith(RobolectricTestRunner.class)
+@Config(application = MyApplication.class)
 public class RoomDatabaseTest {
 
     private MyRoomDatabase database;
