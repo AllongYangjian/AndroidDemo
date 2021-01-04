@@ -37,6 +37,7 @@
     <string-array name="file_list">
         <item>各种存储路径</item>
         <item>键值对数据</item>
+        <item>ROOM数据库</item>
     </string-array>
 
     <string-array name="image_list">
