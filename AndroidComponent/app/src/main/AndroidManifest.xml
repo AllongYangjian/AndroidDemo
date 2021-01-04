@@ -269,6 +269,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.file.FilePathActivity"/>
         </activity>
+        <activity android:name=".view.file.SharePreferenceActivity"
+            android:label="@string/share_preference"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.file.FilePathActivity"/>
+        </activity>
 
         <provider
             android:name=".provider.MySuggestionProvider"
