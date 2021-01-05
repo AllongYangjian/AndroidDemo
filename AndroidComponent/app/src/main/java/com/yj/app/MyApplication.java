@@ -2,19 +2,14 @@ package com.yj.app;
 
 import android.app.Application;
 
-import androidx.room.Room;
-
-import com.yj.app.db.MyRoomDatabase;
-
 public class MyApplication extends Application {
 
     private static MyApplication instance;
 
     @Override
     public void onCreate() {
-        super.onCreate();
         instance = this;
-        getDatabase();
+        super.onCreate();
     }
 
     public static MyApplication getInstance() {
@@ -22,7 +17,4 @@ public class MyApplication extends Application {
     }
 
 
-    public MyRoomDatabase getDatabase() {
-        return MyRoomDatabase.getDatabase(getApplicationContext());
-    }
 }

@@ -39,7 +39,7 @@ public class DatabaseActivity extends AppCompatActivity {
             User user = new User();
             user.firstName = firstName;
             user.lastName = lastName;
-            MyRoomDatabase database = MyApplication.getInstance().getDatabase();
+            MyRoomDatabase database = MyRoomDatabase.getDatabase(getApplicationContext());
             database.getUserDao().insertAll(user);
         });
     }

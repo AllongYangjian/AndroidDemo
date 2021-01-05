@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.allong.databases.dao.UserDao;
 import com.allong.databases.entity.User;
 
-@Database(entities = {User.class},exportSchema = false,version = 1)
+@Database(entities = {User.class},exportSchema = true,version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao getUserDao();
