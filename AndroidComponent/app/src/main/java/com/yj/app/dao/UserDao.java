@@ -25,7 +25,7 @@ public interface UserDao {
     User findByName(String first, String last);
 
     @Insert
-    void insertAll(User... users);
+    List<Long> insertAll(User... users);
 
     @Delete
     void delete(User user);
