@@ -69,4 +69,7 @@
     <string name="please_input_value">请输入值</string>
     <string name="get">获取</string>
     <string name="share_preference">SharePreference</string>
+    <string name="first_name">FIRST_NAME</string>
+    <string name="last_name">LAST_NAME</string>
+    <string name="room_database">ROOM_DATABASE</string>
 </resources>

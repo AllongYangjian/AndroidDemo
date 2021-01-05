@@ -43,6 +43,9 @@ public class FilePathActivity extends AppCompatActivity {
                     case 1:
                         gotoActivity(SharePreferenceActivity.class);
                         break;
+                    case 2:
+                        gotoActivity(DatabaseActivity.class);
+                        break;
                     default:
                         break;
                 }
