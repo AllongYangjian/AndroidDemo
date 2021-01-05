@@ -4,8 +4,11 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 
 import com.yj.app.domain.User;
+import com.yj.app.domain.UserAndPlayList;
+import com.yj.app.domain.UserLibrary;
 
 import java.util.List;
 
@@ -26,4 +29,12 @@ public interface UserDao {
 
     @Delete
     void delete(User user);
+
+    @Transaction
+    @Query("select * from user")
+    List<UserLibrary> getUserLibrary();
+
+    @Transaction
+    @Query("SELECT * FROM user")
+     List<UserAndPlayList> getUsersWithPlaylists();
 }

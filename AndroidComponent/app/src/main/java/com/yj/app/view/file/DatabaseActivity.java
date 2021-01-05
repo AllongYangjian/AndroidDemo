@@ -2,6 +2,7 @@ package com.yj.app.view.file;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,13 +12,19 @@ import com.yj.app.MyApplication;
 import com.yj.app.R;
 import com.yj.app.databinding.ActivityDatabaseBinding;
 import com.yj.app.db.MyRoomDatabase;
+import com.yj.app.domain.Address;
+import com.yj.app.domain.Library;
+import com.yj.app.domain.Student;
 import com.yj.app.domain.User;
 
 import java.util.Objects;
 
 public class DatabaseActivity extends AppCompatActivity {
 
+    private final String TAG  ="DatabaseActivity";
+
     private ActivityDatabaseBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,33 @@ public class DatabaseActivity extends AppCompatActivity {
             user.lastName = lastName;
             MyRoomDatabase database = MyRoomDatabase.getDatabase(getApplicationContext());
             database.getUserDao().insertAll(user);
+            Log.e(TAG,user.uid+"");
+           saveStudent();
+            saveUserLibrary();
         });
+    }
+
+    private void saveStudent() {
+        MyRoomDatabase database = MyRoomDatabase.getDatabase(getApplicationContext());
+        Student student = new Student();
+        student.name="yangjian";
+        student.age = 28;
+        student.gender="男";
+        Address address = new Address();
+        address.street= "米市巷街道";
+        address.city = "杭州";
+        address.state = "浙江";
+        address.postCode = 100330;
+        student.address = address;
+        database.getStudentDao().insertAll(student);
+    }
+
+    private void saveUserLibrary(){
+        MyRoomDatabase database = MyRoomDatabase.getDatabase(getApplicationContext());
+        Library library = new Library();
+        library.name = "library1";
+        library.sid = 1;
+        database.getLibraryDao().insertAll(library);
+
     }
 }
