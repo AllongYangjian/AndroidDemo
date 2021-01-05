@@ -1,3 +1,4 @@
+include ':databases'
 rootProject.name='AndroidComponent'
 include ':intent'
 include ':layout'
