@@ -38,6 +38,7 @@
         <item>各种存储路径</item>
         <item>键值对数据</item>
         <item>ROOM数据库</item>
+        <item>分享文件</item>
     </string-array>
 
     <string-array name="image_list">
